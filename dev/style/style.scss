@@ -1,0 +1,930 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "reset";
+@import "mixin";
+
+@import "partial/top";
+@import "partial/article";
+@import "partial/tip";
+
+@include font-face("refinery29");
+@include font-face("BrownStd-Bold");
+@include font-face("BrownStd-Regular");
+@include font-face("PlayfairDisplay-Bold");
+@include font-face("BrownStd-Light");
+.cover{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+        .covermiddle{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 100%;
+            background: white;
+            .triangle{
+                position: absolute;
+                width: 0;
+                height:0;
+                border-right: 23px solid transparent;
+                border-top: 23px solid transparent;
+                border-left: 23px solid transparent;
+                border-bottom: 23px solid #666;
+                border-top-left-radius: 23px;
+                border-top-right-radius: 23px;
+                border-bottom-left-radius: 23px;
+                border-bottom-right-radius: 23px;
+                animation: circlechange 0.6s linear;
+                -o-animation: circlechange 0.6s linear;
+                -moz-animation: circlechange 0.6s linear;
+                -webkit-animation: circlechange 0.6s linear;
+                animation-iteration-count:infinite;
+                -o-animation-iteration-count:infinite;
+                -moz-animation-iteration-count:infinite;
+                -webkit-animation-iteration-count:infinite;
+            }
+            .circle{
+                width: 35px;
+                height: 35px;
+                background: #f5f5f5;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 100%;
+            }
+        }
+}
+@keyframes  circlechange {
+0%   { @include transform(rotate(0deg));}
+100%   {  @include transform(rotate(360deg));}
+}
+@-webkit-keyframes  circlechange {
+0%   { @include transform(rotate(0deg));}
+100%   {  @include transform(rotate(360deg));}
+}
+@-o-keyframes  circlechange {
+0%   { @include transform(rotate(0deg));}
+100%   {  @include transform(rotate(360deg));}
+}
+@-moz-keyframes  circlechange {
+0%   { @include transform(rotate(0deg));}
+100%   {  @include transform(rotate(360deg));}
+}
+html,body{
+    width: 100%;
+    overflow-x:hidden;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+section{
+    overflow: hidden;
+    width: 100%;
+    max-width: 1520px;
+    margin: 0 auto;
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    display: block;
+}
+
+.desk{
+    display:block;
+}
+.mobiles{
+    display: none;
+}
+.block{
+    display:block;
+}
+.disblock{
+    display: none;
+}
+.allbox{
+    width: 1520px;
+    margin: 0 auto;
+    .topseemore{
+        width: 100%;
+        background: white;
+        position: absolute;
+        .picbox{
+            width: 52%;
+            margin: 0 auto;
+            vertical-align: middle;
+            text-align: justify;
+            &:after{
+                content: '';
+                width: 100%;
+                display: inline-block;
+            }
+            .seemore{
+                width: 52%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .desk{
+                display:inline-block;
+            }
+            .mobiles{
+                display: none;
+            }
+            .toppichover{
+                width: 20%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: 3%;
+                margin-bottom: 3%;
+                position: relative;
+                cursor: pointer;
+
+                    &:after{
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        @include opacity(0);
+                        @include transition(opacity 0.3s);
+                    }
+                &:hover{
+                    &:after{
+                        @include opacity(0.3);
+
+                    }
+                }
+            }
+        }
+    }
+    .topbox{
+        position: relative;
+        width: 100%;
+        margin-top: 50px;
+        .topseemore{
+            bottom: 0;
+        }
+        .back{
+            position:relative;
+        }
+        .textbox{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 12%;
+            left: 5%;
+            .toptext2{
+                width: 86%;
+                margin-top: 17%;
+            }
+        }
+    }
+    .feedbox{
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        .titlebox{
+            position: relative;
+            width: 96%;
+            height: 110px;
+            margin: 0 auto;
+            .line{
+                position:relative;;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                &:after{
+                    content: '';
+                    height: 100%;
+                    display:inline-block;
+                    vertical-align: middle;
+                }
+                .linewid{
+                    width: 100%;
+                    height: 2px;
+                    display: inline-block;
+                    background: #000;
+                    vertical-align: middle;
+                }
+            }
+            .title {
+                position:absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 20;
+                &:after{
+                    height: 100%;
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .abox{
+                    display:inline-block;
+                    width: 100%;
+                    text-align: center;
+                    vertical-align: middle;
+                    a{
+                        display: inline-block;
+                        background-color: #f5f5f5;
+                        font-size: 24px;
+                        color: black;
+                        padding-left: 35px;
+                        padding-right: 35px;
+                        font-family: BrownStd-Light;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .sliderbox{
+            width: 96.3%;
+            margin: 0 auto;
+            position: relative;
+            .slider{
+                width: 100%;
+                & >.sliderapge:first-child{
+                    position: relative;
+                }
+                .sliderapge{
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    .contentboxs{
+                        width: 19.5%;
+                        height: 44.2%;
+                        cursor: pointer;
+                        display: inline-block;
+                        @include transform(translateY(3.5%));
+                        margin:0.24%;
+                        cursor: pointer;
+                        &:hover{
+                            .letsgo{
+                                .go{
+                                    right: -10px;
+                                }
+                            }
+                        }
+                        p{
+                            font-size: 22px;
+                            width: 86%;
+                            font-family: BrownStd-Regular;
+                            color: white;
+                            margin: 0 auto;
+                            margin-top: 2%;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+                        .back{
+                            width: 100%;
+                            height: 102%;
+                            background: red;
+                            position: absolute;
+                            bottom: 0;
+                        }
+                        .seemore{
+                            position: absolute;
+                            width: 100%;
+                            margin: 0 auto;
+                            margin-top: 30%;
+                            top: 0;
+                        }
+                        .letsgo{
+                            position: absolute;
+                            bottom: 15%;
+                            width: 55%;
+                            margin: auto;
+                            left: 0;
+                            right: 0;
+                            text-align: justify;
+                            p{
+                                font-size: 18px;
+                                letter-spacing: 5px;
+                                display: inline-block;
+                                width: 80%;
+                                position: absolute;
+                                left: 0;
+                            }
+                            .go{
+                                position: absolute;
+                                right: 0;
+                                display: inline-block;
+                                width: 15px;
+                                top: 3px;
+                                @include transition((right 0.3s));
+                            }
+                        }
+                    }
+                    .contentbox{
+                        cursor: pointer;
+                        width: 19.5%;
+                        margin:0.24%;
+                        display: inline-block;
+                        padding-bottom: 3%;
+                        position: relative;
+                        &:before{
+                            content: '';
+                            position:absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            background-color: white;
+                            opacity: 0;
+                            z-index: 40;
+                            @include transition((opacity 0.3s));
+                        }
+                        &:hover{
+                            &:before{
+                                @include opacity(0.3);
+                            }
+                        }
+                        .picbox{
+                            width: 100%;
+                            position: relative;
+                            display: inline-block;
+
+                        }
+                        .contentbottom{
+                            position: absolute;
+                            width: 100%;
+                            height: 18%;
+                            background: white;
+                            bottom: 0;
+                            z-index: 20;
+                            text-align: center;
+                            p{
+                                font-size: 13px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                color: black;
+                                vertical-align: middle;
+                                display: inline-block;
+                                font-family: BrownStd-Regular;
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
+                            }
+                            &:after{
+                                height: 100%;
+                                width: 1px;
+                                content: '';
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+
+                        }
+                        .circle{
+                            width: 29%;
+                            position: absolute;
+                            bottom: 14%;
+                            left: 50%;
+                            margin-left: -15%;
+                            z-index: 30;
+                            border-radius: 120px;
+                            overflow: hidden;
+                            box-shadow: -2px 0px 16px -2px grey;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+        }
+        .buttonbox{
+            width: 100%;
+            height: 120px;
+            text-align: center;
+            position: relative;
+            &:after{
+                height: 100%;
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .buttoncenter{
+                width: 360px;
+                height: 60%;
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+                cursor: pointer;
+                .middle{
+                    width: 1px;
+                    height: 100%;
+                    background: rgba(96,96,96,0.1);
+                    margin: 0 auto;
+                }
+                .button{
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    top: 5%;
+                    color: red;
+                    padding-top: 5%;
+                    p{
+                        font-size: 16px;
+                        font-family: refinery29;
+                        display:block;
+                        position: absolute;
+
+                    }
+                    span{
+                        font-size: 16px;
+                        font-family: BrownStd-Regular;
+                        display:block;
+                        position: absolute;
+                        text-transform: uppercase;
+                    }
+
+                }
+
+                .buttonleft{
+                    p{
+                        left: 50px;
+                        @include transition(left 0.4s);
+                    }
+                    span{
+                        right: 30px;
+                    }
+                    &:hover{
+                        p{
+                            left: 40px;
+
+                        }
+                    }
+                }
+                .buttonright{
+                    right: 0;
+                    p{
+                        right: 50px;
+                        @include transition(right 0.4s);
+                    }
+                    span{
+                        left: 40px;
+                    }
+                    &:hover{
+                        p{
+                            right: 40px;
+
+                        }
+                    }
+                }
+                .disabled{
+                    p,span{ color: grey;}
+                    &:hover{
+                        .p1{
+                            left: 50px;
+                        }
+                        .p2{
+                            right: 50px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    .circlebigbox{
+        width: 100%;
+        margin: 0 auto;
+        background: white;
+        margin-bottom: 20px;
+        .circlecenter{
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 11%;
+            padding-bottom: 11%;
+            text-align: justify;
+            &:after{
+                width: 100%;
+                height: 100%;
+                content: '';
+                display: inline-block;
+            }
+            .leftcirclepic{
+                position: relative;
+                display: inline-block;
+                width: 42%;
+                @include border-radius(100%);
+                overflow: hidden;
+                vertical-align: middle;
+            }
+            .righttext{
+                width: 46%;
+                height: 100%;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                .toptext{
+                    width: 66%;
+                    margin: 0 auto;
+                }
+                .midtext{
+                    width:92%;
+                    margin: 0 auto;
+                    margin-top: 10%;
+                    margin-bottom: 10%;
+                }
+                .view{
+                    position: relative;
+                    display: inline-block;
+
+                    &:hover{
+                        .viewbutton{
+                            @include opacity(0);
+                        }
+                        .viewbuttonH{
+                            opacity: 1;
+                        }
+                    }
+                    .viewbuttonH,.viewbutton{
+                        margin: 0 auto;
+                        width: 46%;
+                        cursor: pointer;
+                        @include transition(opacity 0.8s);
+                    }
+                    .viewbuttonH{
+                        position: relative;
+                        @include opacity(0);
+                    }
+                    .viewbutton{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+
+
+    }
+    .allbottom{
+        width: 100%;
+        background: #353535;
+        position: relative;
+        .topseemore{
+            top: 0;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+        .bottomlog{
+            width: 12%;
+            margin: 0 auto;
+            padding-top: 14.3%;
+            padding-bottom: 2.8%;
+        }
+        .bottomtext{
+            width: 48%;
+            margin: 0 auto;
+            padding-bottom: 4.5%;
+        }
+    }
+}
+@media screen and (max-width: 1520px) {
+    .allbox{
+        width: 100%;
+        .feedbox{
+            width: 98%;
+
+        }
+        .circlebigbox{
+            width: 94%;
+            .circlecenter{
+                width: 70%;
+                .leftcirclepic{
+                    width: 44%;
+                }
+                .righttext{
+                    width: 43%;
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 1420px) {
+    .allbox{
+        .circlebigbox{
+            width: 94%;
+            .circlecenter{
+                width: 74%;
+                padding-top: 7%;
+                padding-bottom: 7%;
+                .leftcirclepic{
+                    width: 43%;
+                }
+                .righttext{
+                    width: 46%;
+                }
+            }
+        }
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo p{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+@media screen and (max-width: 1320px){
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs p{
+        font-size: 18px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo p{
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo .go{
+        width: 12%;
+        top: 2px;
+    }
+}
+@media screen and (max-width: 1020px){
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs p{
+        font-size: 14px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo p{
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo .go{
+        width: 12%;
+        top: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs p{
+        font-size: 12px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo p{
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs .letsgo .go{
+        width: 12%;
+        top: 0;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentbox .contentbottom p{
+        font-size: 9px;
+    }
+    .allbox{
+        width: 768px;
+        .circlebigbox{
+            width: 94%;
+
+        }
+    }
+}
+
+.mobile{
+    .allbox .topseemore .picbox .toppichover{
+        &:hover{
+            &:after{
+                opacity: 0;
+            }
+        }
+    }
+    .desk{
+        display: none;
+    }
+    .mobiles{
+        display: block;
+    }
+    .allbox{
+        width: 100%;
+        .topseemore{
+            position: relative;
+            @include transform(translateY(-30%));
+            .picbox{
+                width: 80%;
+                .mobiles{
+                    display: inline-block;
+                }
+                .desk{
+                    display: none;
+                }
+                .seemore{
+                    width: 27%;
+
+                }
+
+                .toppichover{
+                    width: 33%;
+                    margin-top: 6%;
+                    margin-bottom: 6%;
+
+                }
+            }
+        }
+        .topbox{
+            .textbox{
+                width: 42%;
+                top: 30%;
+                .toptext2{
+                    width: 90%;
+                    margin-top:9%;
+                }
+            }
+
+        }
+        .feedbox{
+            width: 92%;
+            .titlebox{
+                height: 38px;
+                .title {
+                    a{
+                        font-size: 15px;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+            .sliderbox{
+                .slider{
+                    position: relative;
+                    display: inline-block;
+                }
+                .sliderapge{
+                    width:2000px;
+                    display: inline-block;
+                    margin: 0%;
+                    .contentbox{
+                        width: 200px;
+                        margin: 8px;
+                        padding-bottom: 0.3%;
+                        display: inline-block;
+                        &:hover{
+                            &:before{
+                                @include opacity(0);
+                            }
+                        }
+                    }
+                    .contentboxs{
+                        width: 200px;
+                        height: 285px;
+                        margin: 0px;
+                        margin-top: 0px;
+                        display: inline-block;
+                        @include transform(translateY(6.5%));
+                        overflow: hidden;
+                        &:hover{
+                            .letsgo{
+                                .go{
+                                    right: 0;
+                                }
+                            }
+                        }
+                        p{
+                            font-size: 20px;
+                        }
+                        .back{
+                            position: relative;
+                            height:100%;
+                        }
+                        .letsgo{
+                            width: 40%;
+                            bottom: 20%;
+                            p{
+                                font-size: 12px;
+                                letter-spacing: 2px;
+                                width: 86%;
+                            }
+                            .go{
+                                width: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .circlebigbox{
+            width: 70%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            .circlecenter{
+                width: 60%;
+                padding-top: 7%;
+                padding-bottom: 2%;
+                .leftcirclepic{
+                    margin-top: 10%;
+                    width: 100%;
+                }
+                .righttext{
+                    width: 100%;
+                    padding: 0;
+                    margin: 0 auto;
+                    margin-top: 14%;
+                    display: block;
+                    .viewbutton{
+                        display: none;
+                    }
+                    .toptext{
+                        width: 92%;
+                        margin-bottom: 6%;
+                    }
+                    .midtext{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .allbottom{
+            margin-top: 15%;
+            .bottomlog{
+                width: 30%;
+                padding-top: 1.5%;
+                padding-bottom: 4%;
+            }
+            .bottomtext{
+                width: 84%;
+            }
+        }
+    }
+}
+.ie{
+    .allbox .topseemore .picbox .seemore{
+        width: 50%;
+    }
+    .allbox .topseemore .picbox .toppichover{
+        width: 16%;
+        margin-left: 5%;
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentbox .contentbottom p{
+        margin-top: 2px;
+    }
+    .allbox .feedbox .buttonbox .buttoncenter .buttonright p{
+        position:absolute;
+        top: 14px;
+    }
+    .allbox .feedbox .buttonbox .buttoncenter .button p{
+        position:absolute;
+        top: 14px;
+    }
+}
+.ipad{
+    .allbox .topseemore .picbox .toppichover{
+        &:hover{
+            &:after{opacity: 0;}
+        }
+    }
+    .allbox .circlebigbox .circlecenter .righttext .view{
+        &:hover{
+            .viewbuttonH{
+                @include opacity(0);
+
+            }
+            .viewbutton{
+                @include opacity(1);
+            }
+        }
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentboxs {
+        &:hover{
+            .letsgo{
+                .go{
+                    right: 0;
+                }
+            }
+        }
+    }
+    .allbox .feedbox .sliderbox .slider .sliderapge .contentbox{
+        &:hover{
+            &:before{
+                @include opacity(0);
+            }
+        }
+    }
+    .allbox .feedbox .buttonbox .buttoncenter .buttonright{
+        &:hover{
+            .p2{
+                right: 50px;
+            }
+        }
+    }
+    .allbox .feedbox .buttonbox .buttoncenter .buttonleft{
+        &:hover{
+            .p1{
+                left: 50px;
+            }
+        }
+    }
+}

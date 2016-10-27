@@ -1,0 +1,23 @@
+{
+    "students": [
+        {
+            "name": "apple",
+            "sex": "1",
+            "age": 20
+        },
+        {
+            "name": "banana",
+            "sex": "0",
+            "age": 27
+        },
+        {
+            "name": "cat",
+            "sex": "1",
+            "age": 23
+        }
+    ],
+    "obj": {
+        "name": "tom",
+        "age": 12
+    }
+}
