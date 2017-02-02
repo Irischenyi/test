@@ -14,10 +14,7 @@ ssss
 - npm install安装所有依赖包
 
 
-sjsjsjsjsj
-ddddd
-ssssss
-
+dddddd
 
 ## 目录结构
 
